@@ -48,7 +48,7 @@ public class ComentarConfiguracion {
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"))) {
 			String line;
 			while ((line = reader.readLine()) != null) {
-				if (line.contains("@Configuration")) {
+				if (line.contains("@Configuration") && !line.contains("//")) {
 					line = "//" + line;
 				}
 				contentBuilder.append(line).append("\n");
